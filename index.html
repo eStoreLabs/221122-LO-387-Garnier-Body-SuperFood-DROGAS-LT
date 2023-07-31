@@ -217,7 +217,7 @@
     flex-wrap: wrap-reverse;
     justify-content: center;
     align-items: center;
-    margin: 50px 0;
+    margin: 50px auto;
   }
 
   #es-garnier.es-garnier .es-green__imgCtn {
@@ -261,6 +261,7 @@
 
   #es-garnier.es-garnier .es-ingredients {
     padding: 16px;
+    margin: auto;
   }
 
   #es-garnier.es-garnier .es-ingredients__title {
@@ -408,7 +409,7 @@
   }
 
   #es-garnier.es-garnier .es-benefits {
-    margin: 50px 0;
+    margin: 50px auto;
   }
 
   #es-garnier.es-garnier .es-benefits__container {
@@ -462,13 +463,75 @@
     transform: translateX(20px);
     transition: 0.5s ease;
   }
-
-  #es-garnier.es-garnier .es-benefits__wrapper {
+  #es-garnier.es-garnier .es-benefits__effect { 
     position: relative;
-    z-index: 1;
+    z-index: 0;
+  }
+  #es-garnier.es-garnier .es-benefits__effect ::after{
+    position: absolute; 
+    z-index: -1;
+    content: "";
+    width: 250px;
+    height: 250px;
+    background-color: #f3f3f3;
+    border-radius: 50%;
+    bottom: -120px;
+    right: -100px;
   }
 
-  #es-garnier.es-garnier .es-benefits__wrapper img {
+  #es-garnier.es-garnier .es-benefits__wrapper {
+    height: 218px;
+    width: 100vw;
+    flex-basis: 50%;
+    z-index: 1;
+    background-image: url("./img/bg-results.png");
+    background-size: cover;
+    display: grid;
+    place-items: center;
+  }
+
+  #es-garnier.es-garnier .es-benefits__bg {
+    display: flex;
+    flex-direction: column;
+    color: #FFF;
+    background-color: rgba(9, 91, 46, 0.89);
+    width: 70%;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+  }
+@media (min-width: 650px) {
+    #es-garnier.es-garnier .es-benefits__wrapper {
+      width: 400px;
+      justify-items: start;
+      align-items: center;
+    }
+
+    #es-garnier.es-garnier .es-benefits__bg {
+      width: 75%;
+      margin-left: 10%;
+    }
+  }
+  #es-garnier.es-garnier .es-benefits__layers {
+    max-width: 110px;
+  }
+
+  #es-garnier.es-garnier .es-benefits__txt {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  #es-garnier.es-garnier .es-benefits__txt span {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  /* #es-garnier.es-garnier .es-benefits__wrapper img {
     max-width: 400px;
     z-index: 0;
     position: relative;
@@ -483,10 +546,10 @@
     border-radius: 50%;
     bottom: -120px;
     right: -100px;
-  }
+  } */
 
   #es-garnier.es-garnier .es-prepare {
-    margin: 50px 10px;
+    margin: 50px auto;
   }
 
   #es-garnier.es-garnier .es-prepare__title {
@@ -543,6 +606,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
+    margin-inline: auto;
   }
 
   #es-garnier.es-garnier .es-eco__imgCtn {
@@ -581,7 +645,7 @@
   }
 
   #es-garnier.es-garnier .es-cross {
-    margin: 20px 0;
+    margin: 20px auto;
   }
 
   #es-garnier.es-garnier .es-cross__title {
@@ -749,6 +813,7 @@
     justify-content: space-evenly;
     align-items: center;
     gap: 2rem;
+    padding: 6px;
 }
 
 #es-garnier.es-garnier .es-footer .es-footer__wrapper div {
@@ -785,6 +850,7 @@
 
 #es-garnier.es-garnier .es-footer .es-footer__wrapper div span {
   font-size: 38px;
+  font-family: "Montserrat";
   font-weight: 700;
 }
 
@@ -1027,8 +1093,10 @@
           </div>
           <div class="es-benefits__effect">
             <div class="es-benefits__wrapper">
-              <img src="./img/products-img.png" alt="" />
-              <div class="es-benefits__elipsa"></div>
+              <div class="es-benefits__bg">
+                <img class="es-benefits__layers" src="./img/drop.png" alt="">
+                <p class="es-benefits__txt">Drėkina iki  <span>10 odos sluoksnių</span></p>
+              </div>
             </div>
           </div>
         </div>
@@ -1192,11 +1260,11 @@
           </div>
           <div>
             <img src="./img/footer-2.png" alt="Vegan formula logo"/>
-            <p class="es-footer_tiny-text">Nesatur dzīvnieku izcelsmes sastāvdaļas</p>
+            <p class="es-footer_tiny-text">Sudėtyje nėra gyvūninės <br/>kilmės ingredientų</p>
           </div>
           <div>
             <p><span>96%</span></p>
-            <p>dabīgas izcelsmes sastāvdaļu</p>
+            <p>natūralios kilmės ingredientai</p>
           </div>
         </div>
       </div>
